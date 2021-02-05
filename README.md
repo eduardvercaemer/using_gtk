@@ -55,3 +55,8 @@ before.
 - Initializes app state
 - We use said runtime to run _update_ functions
 - We use the _state_ to change ui elements or set up callbacks
+
+Once we have the working template, most work is done
+in the [_actions_](./src/actions/mod.rs) and the
+[_state_](./src/state.mod.rs) modules (also check
+builder.ui to see what the object references are).

@@ -9,13 +9,18 @@
     <property name="valign">center</property>
     <property name="orientation">vertical</property>
     <child>
-      <object class="GtkButton" id="home">
-        <property name="label" translatable="yes">Home</property>
+      <object class="GtkLabel" id="about_label_title">
         <property name="visible">True</property>
-        <property name="can-focus">True</property>
-        <property name="receives-default">True</property>
+        <property name="can-focus">False</property>
+        <property name="halign">center</property>
+        <property name="margin-start">20</property>
+        <property name="margin-end">20</property>
+        <property name="margin-top">20</property>
         <property name="margin-bottom">20</property>
-        <property name="action-name">app.main_menu</property>
+        <property name="label" translatable="yes">about</property>
+        <attributes>
+          <attribute name="scale" value="3"/>
+        </attributes>
       </object>
       <packing>
         <property name="expand">False</property>
@@ -27,8 +32,132 @@
       <object class="GtkLabel">
         <property name="visible">True</property>
         <property name="can-focus">False</property>
-        <property name="label" translatable="yes">About:
-Hello, this is Ed's Library demo.</property>
+        <property name="margin-start">20</property>
+        <property name="margin-end">20</property>
+        <property name="margin-top">20</property>
+        <property name="margin-bottom">20</property>
+        <property name="label" translatable="yes">author    -    Eduard Vercaemer
+email      -     vercaemereduard@gmail.com</property>
+      </object>
+      <packing>
+        <property name="expand">True</property>
+        <property name="fill">True</property>
+        <property name="position">1</property>
+      </packing>
+    </child>
+    <child>
+      <object class="GtkButton" id="home">
+        <property name="label" translatable="yes">back</property>
+        <property name="width-request">100</property>
+        <property name="visible">True</property>
+        <property name="can-focus">True</property>
+        <property name="receives-default">True</property>
+        <property name="halign">center</property>
+        <property name="margin-bottom">10</property>
+        <property name="action-name">app.main_menu</property>
+      </object>
+      <packing>
+        <property name="expand">False</property>
+        <property name="fill">True</property>
+        <property name="position">2</property>
+      </packing>
+    </child>
+  </object>
+  <object class="GtkBox" id="game">
+    <property name="visible">True</property>
+    <property name="can-focus">False</property>
+    <child>
+      <object class="GtkBox" id="game_left_box">
+        <property name="visible">True</property>
+        <property name="can-focus">False</property>
+        <property name="valign">center</property>
+        <property name="margin-start">100</property>
+        <property name="orientation">vertical</property>
+        <child>
+          <object class="GtkLabel" id="game_left_title">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="margin-start">20</property>
+            <property name="margin-end">20</property>
+            <property name="margin-top">20</property>
+            <property name="margin-bottom">20</property>
+            <property name="label" translatable="yes">Actions</property>
+            <attributes>
+              <attribute name="scale" value="2"/>
+            </attributes>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="game_action_hit">
+            <property name="label" translatable="yes">hit</property>
+            <property name="width-request">100</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+            <property name="halign">center</property>
+            <property name="margin-bottom">10</property>
+            <property name="action-name">app.game.hit</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">1</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="game_action_heal">
+            <property name="label" translatable="yes">heal</property>
+            <property name="width-request">100</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+            <property name="halign">center</property>
+            <property name="margin-bottom">10</property>
+            <property name="action-name">app.game.heal</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">2</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="game_action_quit">
+            <property name="label" translatable="yes">quit</property>
+            <property name="width-request">100</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+            <property name="halign">center</property>
+            <property name="margin-bottom">10</property>
+            <property name="action-name">app.main_menu</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">3</property>
+          </packing>
+        </child>
+      </object>
+      <packing>
+        <property name="expand">False</property>
+        <property name="fill">True</property>
+        <property name="position">0</property>
+      </packing>
+    </child>
+    <child>
+      <object class="GtkLabel" id="game_health_label">
+        <property name="visible">True</property>
+        <property name="can-focus">False</property>
+        <property name="label" translatable="yes">Health: </property>
+        <attributes>
+          <attribute name="scale" value="3"/>
+        </attributes>
       </object>
       <packing>
         <property name="expand">True</property>
@@ -42,14 +171,20 @@ Hello, this is Ed's Library demo.</property>
     <property name="can-focus">False</property>
     <property name="halign">center</property>
     <property name="valign">center</property>
-    <property name="margin-top">50</property>
     <property name="orientation">vertical</property>
     <child>
-      <object class="GtkLabel" id="label_1">
+      <object class="GtkLabel" id="label_title">
         <property name="visible">True</property>
         <property name="can-focus">False</property>
-        <property name="margin-bottom">25</property>
-        <property name="label" translatable="yes">EdLib</property>
+        <property name="halign">center</property>
+        <property name="margin-start">20</property>
+        <property name="margin-end">20</property>
+        <property name="margin-top">20</property>
+        <property name="margin-bottom">20</property>
+        <property name="label" translatable="yes">gtk-rs demo</property>
+        <attributes>
+          <attribute name="scale" value="3"/>
+        </attributes>
       </object>
       <packing>
         <property name="expand">False</property>
@@ -58,12 +193,14 @@ Hello, this is Ed's Library demo.</property>
       </packing>
     </child>
     <child>
-      <object class="GtkButton" id="button_1">
+      <object class="GtkButton" id="button_about">
         <property name="label" translatable="yes">about</property>
+        <property name="width-request">100</property>
         <property name="visible">True</property>
         <property name="can-focus">True</property>
         <property name="receives-default">True</property>
-        <property name="margin-bottom">5</property>
+        <property name="halign">center</property>
+        <property name="margin-bottom">10</property>
         <property name="action-name">app.about</property>
       </object>
       <packing>
@@ -73,18 +210,37 @@ Hello, this is Ed's Library demo.</property>
       </packing>
     </child>
     <child>
-      <object class="GtkButton" id="button_2">
-        <property name="label" translatable="yes">quit</property>
+      <object class="GtkButton" id="button_game">
+        <property name="label" translatable="yes">game</property>
+        <property name="width-request">100</property>
         <property name="visible">True</property>
         <property name="can-focus">True</property>
         <property name="receives-default">True</property>
-        <property name="margin-bottom">5</property>
+        <property name="halign">center</property>
+        <property name="margin-bottom">10</property>
+        <property name="action-name">app.game</property>
+      </object>
+      <packing>
+        <property name="expand">False</property>
+        <property name="fill">True</property>
+        <property name="position">2</property>
+      </packing>
+    </child>
+    <child>
+      <object class="GtkButton" id="button_quit">
+        <property name="label" translatable="yes">quit</property>
+        <property name="width-request">100</property>
+        <property name="visible">True</property>
+        <property name="can-focus">True</property>
+        <property name="receives-default">True</property>
+        <property name="halign">center</property>
+        <property name="margin-bottom">10</property>
         <property name="action-name">app.quit</property>
       </object>
       <packing>
         <property name="expand">False</property>
         <property name="fill">False</property>
-        <property name="position">2</property>
+        <property name="position">3</property>
       </packing>
     </child>
   </object>
