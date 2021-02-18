@@ -149,10 +149,16 @@ impl State {
     /// for action app.game.hit
     pub fn game_hit(&mut self) {
         println!("dbg hit");
-        self
+        if self
             .game
-            .health -= 2;
-        self.game_display_health();
+            .health <= 2 {
+            self.game_died();
+        } else {
+            self
+                .game
+                .health -= 2;
+                self.game_display_health();
+        }
     }
 
     /// for action app.game.heal
@@ -162,6 +168,20 @@ impl State {
             .game
             .health += 5;
         self.game_display_health();
+    }
+
+    /// Once the player dies
+    fn game_died(&mut self) {
+        self
+            .game
+            .health = 0;
+        let label: gtk::Label = self
+            .ui
+            .builder
+            .get_object("game_health_label")
+            .expect("object: game_health_label");
+
+        label.set_label(&format!("YOU DIED !"));
     }
 
     /// displays the current health in the label
