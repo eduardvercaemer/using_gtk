@@ -4,6 +4,10 @@ Creating simple GUI applications using GTK on rust.
 
 _(Note: inspiration and structure taken from gnome's fractal, see the code [here](https://gitlab.gnome.org/GNOME/fractal/-/tree/master/fractal-gtk/src))_
 
+![image](https://github.com/eduardvercaemer/using_gtk/assets/40474768/39e3c402-151d-4764-94ef-9bb940573f5c)
+
+![image](https://github.com/eduardvercaemer/using_gtk/assets/40474768/85cb3990-c09d-4017-991c-0bd7c7646784)
+
 # The App
 
 We start by creating a GTK app in our main function, which we then
